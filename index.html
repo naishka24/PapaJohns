@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Papa Clones</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="src/output.css" />
+  <link rel="stylesheet" href="src/input.css" />
+  <link rel="stylesheet" href="src/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+<body>
+  <header>
+    <nav class="container flex justify-between p-5 gap-4 relative">
+      <div class="w-[100px] m:w-[120px] 2xl:w-[250px] m:absolute top-[50%] 2xl:left-[4%]">
+       <a href="/index.html">
+        <img src="img/pj_logo.png" alt="logo" />
+       </a> 
+      </div>
+      <div class="flex justify-end w-full items-center gap-6 s:gap-10">
+        <div class="hidden m:justify-self-center m:flex items-center gap-6">
+          <p class="font-bold text-[20px]">Restoranlar</p>
+          <p class="font-bold text-[20px]">PapaBonus</p>
+        </div>
+        <div class="flex justify-between items-center gap-6">
+          <div class="flex flex-col m:flex-row items-center">
+          <img class="w-[25px] h-[25px]" src="img/flag_az.png" alt="az" />
+          <p class="font-bold text-[12px] m:hidden">Az</p>
+          <p class="hidden m:block font-bold text-[20px]">Azərbaycanca</p>
+        </div>
+        <div class="flex flex-col m:flex-row items-center">
+          <i class="fa-solid fa-user text-[25px] m:hidden!"></i>
+          <p class="font-bold text-[12px] m:hidden">Giriş</p>
+          <p class="hidden m:block font-bold text-[20px]">Giriş /Qeydiyyat</p>
+        </div>
+        <div onclick="setModal()" class="flex flex-col items-center relative">
+          <span id="shopCount" class="text-[12px] rounded-[50%] py-[2px] px-[7px] bg-red absolute top-[-15px] right-[-5px] text-white flex justify-center items-center">0</span>
+          <i class="fa-solid fa-shopping-basket text-[25px]"></i>
+          <p id="shopQiymet" class="font-bold text-[12px]">0</p>
+          <div id="sebetModal" class="fixed hidden z-[9999] grid place-items-center inset-0 bg-[#00000076]">
+            <!-- ag rengli -->
+            <div onclick="event.stopPropagation()"
+                class="w-full rounded-md h-full md:w-[600px] md:h-auto bg-white p-5">
+                <div class="flex justify-between items-center overflow-y-auto">
+                  <h3 class="text-[30px] font-bold">Səbət</h3>
+                  <p onclick="setModal()" class="cursor-pointer flex items-center gap-1 font-bold">
+                    Bağla
+                    <span class="fa-solid fa-xmark bg-black text-white px-[5.5px] py-[4px] rounded-[50%]"></span>
+                  </p>
+                </div>
+                <p>Səbətinizdə məhsulların sayı: <span id="basketCount"></span></p>
+                <div id="basket" class="my-5">
+                  
+                </div>
+                <div class="flex flex-col gap-2  md:flex-row justify-between items-center mt-5 font-bold">
+                  <button onclick="setModal()" class="bg-red-700 p-2 text-white max-w-[200px] rounded-md">
+                    SİFARİŞİ GÖNDƏR
+                  </button>
+                  <p class="sm:text-[20px]">Ümumi məbləğ: <span id="totalPrice"></span></p>
+                </div>
+              </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </nav>
+    <div class=" bg-red p-[12px] scrollbar">
+      <ul id="menu" class="container mx-auto text-white text-[20px] p-2 font-bold uppercase flex items-center m:justify-end gap-4">
+        </ul>
+    </div>
+    <div class="container bg-[#f1f1f1] mx-auto p-[18px] flex items-center gap-2 justify-center m:justify-around my-4">
+      <p class="hidden m:block text-[24px] font-bold">Promo kodunuz var? <span class="text-green">Endirimdən istifadə edin!</span> </p>
+      <div class="flex items-center gap-2 justify-center">
+        <input class="bg-white max-w-[200px] w-full p-2 border border-green rounded-[6px]" type="search" placeholder="Promo kodu daxil edin"/>
+        <button class="bg-green p-2 text-white font-bold w-[60px] rounded-[6px]">OK</button>
+      </div>
+    </div>
+  </header>
+  <main class="min-h-[380px]">
+    <div class="my-4"> 
+      <div class="container swiper mySwiper w-full text-center">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="img/slider1.png" alt="" /></div>
+          <div class="swiper-slide"><img src="img/slider2.png" alt="" /></div>
+          <div class="swiper-slide"><img src="img/slider3.png" alt="" /></div>
+          <div class="swiper-slide"><img src="img/slider4.png" alt="" /></div>
+          <div class="swiper-slide"><img src="img/slider5.png" alt="" /></div>
+          <div class="swiper-slide"><img src="img/slider6.png" alt="" /></div>
+          <div class="swiper-slide"><img src="img/slider7.jpg" alt="" /></div>
+          <div class="swiper-slide"><img src="img/slider8.png" alt="" /></div>
+          <div class="swiper-slide"><img src="img/slider9.png" alt="" /></div>
+          <div class="swiper-slide"><img src="img/slider10.jpg" alt="" /></div>
+        </div>
+        <div class="swiper-pagination justify-center"></div>
+      </div>
+    </div>
+  </main>
+  <footer class="bg-red text-white text-[12px] s:text-[18px] font-bold p-[20px] w-full mt-[20px]">
+    <div class="container mx-auto flex justify-between gap-4 w-full">
+      <div class="flex flex-col xs:flex-row gap-1">
+        <p>&copy;PGA</p>
+        <p>2024</p>
+      </div>
+      <div class="flex flex-wrap  items-center gap-4">
+        <a href="">Haqqımızda</a>
+        <a href="">Sual-Cavab</a>
+        <a href="">Karyera</a>
+        <a href="">Xəmir</a>
+        <a href="">Papa Talk - Şərtlər və Qaydalar</a>
+      </div>
+    </div>
+  </footer>
+  <script src="js/header.js"></script>
+  <script src="js/basket.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="js/swiper.js"></script>
+</body>
+</html>

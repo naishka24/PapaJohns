@@ -1,0 +1,40 @@
+.scrollbar {
+  overflow-x: auto;
+  &::-webkit-scrollbar{height: 0 !important; } 
+}
+.container{max-width: 1350px;}
+button{cursor: pointer;}
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.swiper-pagination-bullet{
+  width: 15px !important;
+  height: 15px !important;
+  background-color: #fff !important;
+  border: 1px solid #15803d !important;
+  opacity: 100 !important;
+}
+.swiper-pagination-bullet-active{
+  background-color: #15803d !important;
+}
+@media only screen and (min-width:1280px){
+  footer{
+    position: initial;
+  }
+
+} 

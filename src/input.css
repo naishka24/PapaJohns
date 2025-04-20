@@ -1,0 +1,16 @@
+@import "tailwindcss";
+/* npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch */
+
+@theme {
+  --breakpoint-xs: 580px;
+  --breakpoint-s: 768px;
+  --breakpoint-sm: 968px;
+  --breakpoint-m: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1408px;
+  --color-red: #b91c1b;
+  --color-green: #15803d;
+  --shadow-custom: 0px 7px 29px 0px rgba(100, 100, 111, 0.2);
+}
+
+
